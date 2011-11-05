@@ -125,6 +125,14 @@ h3 span {
   color: #888;
 }
 
+h3 span.available-translations {
+  float: right;
+}
+
+h3 span.available-translations a {
+  text-decoration: none;
+}
+
 ul.locales {
   margin: 25px 0;
 }
