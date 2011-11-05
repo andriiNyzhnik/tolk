@@ -44,7 +44,7 @@
                 <% phrase.translations.each do |t| %>
                   <% if t.text && t.locale_id != @locale.id && t.locale.name.to_sym != locale %>
                     <div class="other-translation">
-                      <%= "#{t.locale.name}: #{t.text.kind_of?(Hash) ? t.text.to_yaml : t.text}" %>
+                      <%= "#{t.locale.name}: #{format_i18n_value(t.text).html_safe}" %>
                     </div>
                   <% end %>
                 <% end %>
