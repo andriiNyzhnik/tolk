@@ -41,7 +41,7 @@ module Tolk
     private
 
     def find_locale
-      @locale = Tolk::Locale.find_by_name!(params[:id])
+      @locale = Tolk::Locale.find_by_name(params[:id])
     end
   end
 end
