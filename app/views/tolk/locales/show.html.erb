@@ -40,11 +40,11 @@
                 <%= format_i18n_value(phrase.translations.primary.text).html_safe -%>
               <% end -%>
               <span class="key" title="<%= phrase.key %>"><%= truncate(phrase.key, :length => 100) %></span>
-              <span class="translation-options">
+              <div class="translation-options">
                 <% phrase.translations.each do |t| %>
                   <a href="#" data-locale="<%= t.locale.name %>"><%= t.locale.name %></a>
                 <% end %>
-              </span>
+              </div>
               <span class="other-translations">
                 <% phrase.translations.each do |t| %>
                   <% if t.text && t.locale_id != @locale.id && t.locale.name.to_sym != locale %>
