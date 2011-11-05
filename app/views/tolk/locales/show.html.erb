@@ -13,7 +13,7 @@
     Display available translations:
     <% @locales.each do |l| %>
       <% unless l.name.to_sym == locale %>
-        <a href="#" data-locale="<%= l.name %>"><%= t.locale.name %></a>
+        <a href="#" data-locale="<%= l.name %>"><%= l.name %></a>
       <% end %>
     <% end %>
   </div>
