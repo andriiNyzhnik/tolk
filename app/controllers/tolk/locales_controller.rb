@@ -10,6 +10,7 @@ module Tolk
     def show
       respond_to do |format|
         format.html do
+          @locales = Tolk::Locale.all
           @phrases = @locale.phrases_without_translation(params[:page])
         end
         format.atom { @phrases = @locale.phrases_without_translation(params[:page], :per_page => 50) }
