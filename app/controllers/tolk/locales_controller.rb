@@ -11,7 +11,7 @@ module Tolk
       respond_to do |format|
         format.html do
           @locales = Tolk::Locale.all
-          @phrases = @locale.phrases_without_translation(params[:page])
+          @phrases = @locale.includes(:translations => [:locales]).phrases_without_translation(params[:page])
         end
         format.atom { @phrases = @locale.phrases_without_translation(params[:page], :per_page => 50) }
         format.yaml { render :text => @locale.to_hash.ya2yaml(:syck_compatible => true) }
