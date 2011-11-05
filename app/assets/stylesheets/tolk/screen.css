@@ -207,6 +207,15 @@ div.translations {
   text-align: center;
 }
 
+span.other-translations {
+  display: inline-block;
+  font-size: 12px;
+}
+
+span.other-translations .other-translation {
+  
+}
+
 span.notice {
   background: #ffc;
   color: #666;
