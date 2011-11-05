@@ -295,13 +295,18 @@ table.translations .highlight {
   background-color: yellow;
 }
 
-span.other-translations {
+table.translations .translation-options a {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+table.translations span.other-translations {
   display: inline-block;
   font-size: 12px;
   color: rgb(102,102,102);
 }
 
-span.other-translations .locale {
+table.translations span.other-translations .locale {
   color: black;
 }
 
