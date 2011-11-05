@@ -5,7 +5,7 @@ module Tolk
     MAPPING = {
       'ar'    => 'Arabic',
       'bs'    => 'Bosnian',
-      'bt'    => 'Bulgarian',
+      'bg'    => 'Bulgarian',
       'ca'    => 'Catalan',
       'cs'    => 'Czech',
       'da'    => 'Danish',

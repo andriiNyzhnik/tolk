@@ -29,5 +29,9 @@ module Tolk
       select_tag 'scope', options_for_select([[Tolk::Locale.primary_locale.language_name, "origin"],
                                               [locale.language_name, "target"]], params[:scope])
     end
+    
+    def other_locale?(translation, translated_locale)
+      translation.text && translation.locale_id != translated_locale.id && translation.locale.name.to_sym != locale
+    end
   end
 end
