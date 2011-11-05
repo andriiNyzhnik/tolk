@@ -132,7 +132,7 @@ module Tolk
       phrases = Tolk::Phrase.scoped(:order => 'tolk_phrases.key ASC')
 
       existing_ids = self.translations.all(:select => 'tolk_translations.phrase_id').map(&:phrase_id).uniq
-      phrases = phrases.includes(:translations => [:locales]).scoped(:conditions => ['tolk_phrases.id NOT IN (?)', existing_ids]) if existing_ids.present?
+      phrases = phrases.includes(:translations => [:locale]).scoped(:conditions => ['tolk_phrases.id NOT IN (?)', existing_ids]) if existing_ids.present?
 
       result = phrases.paginate(:page => page, :per_page => Tolk::Phrase.per_page)#page(page).per(Tolk::Phrase.per_page)
       result
