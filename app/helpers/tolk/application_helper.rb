@@ -30,7 +30,7 @@ module Tolk
                                               [locale.language_name, "target"]], params[:scope])
     end
     
-    def other_locale?(translation, translated_locale)
+    def other_translation?(translation, translated_locale)
       translation.text && translation.locale_id != translated_locale.id && translation.locale.name.to_sym != locale
     end
   end
