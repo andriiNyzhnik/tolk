@@ -207,20 +207,6 @@ div.translations {
   text-align: center;
 }
 
-span.other-translations {
-  display: inline-block;
-  font-size: 12px;
-  color: rgb(102,102,102);
-}
-
-span.other-translations .locale {
-  color: black;
-}
-
-span.other-translations .other-translation {
-  
-}
-
 span.notice {
   background: #ffc;
   color: #666;
@@ -307,6 +293,16 @@ table.translations tr.active td {
 
 table.translations .highlight {
   background-color: yellow;
+}
+
+span.other-translations {
+  display: inline-block;
+  font-size: 12px;
+  color: rgb(102,102,102);
+}
+
+span.other-translations .locale {
+  color: black;
 }
 
 /*-------------------------------------------------
