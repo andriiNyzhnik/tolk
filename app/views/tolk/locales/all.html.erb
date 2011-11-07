@@ -26,7 +26,7 @@
               <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
               <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
               <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale',
-                                :onfocus => "$(this).parents('tr').addClassName('active');", :onblur => "$(this).parents('tr').removeClassName('active');" %>
+                                :onfocus => "$(this).parents('tr').addClass('active');", :onblur => "$(this).parents('tr').removeClass('active');" %>
             </td>
             <td class="phrase">
 
