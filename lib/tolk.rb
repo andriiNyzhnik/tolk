@@ -11,6 +11,9 @@ module Tolk
   mattr_accessor :primary_locale_name
   @@primary_locale_name = I18n.default_locale.to_s
 
+  mattr_accessor :authenticator
+  @@authenticator = nil
+
   def self.setup
     yield self
   end
