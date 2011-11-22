@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://www.rubyonrails.org'
 
   s.platform = Gem::Platform::RUBY
-  s.add_dependency('will_paginate')
+  s.add_dependency('kaminari')
   s.add_dependency('jquery-rails')
   s.add_dependency('ya2yaml', '~> 0.26')
 
