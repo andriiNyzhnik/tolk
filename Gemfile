@@ -3,7 +3,7 @@ source "http://rubygems.org"
 #gem "rails", "3.1.0.beta1"
 gem 'rails'
 
-gem 'will_paginate'
+gem 'kaminari'
 gem 'jquery-rails'
 gem "ya2yaml"
 
