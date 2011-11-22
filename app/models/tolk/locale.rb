@@ -58,9 +58,9 @@ module Tolk
     cattr_accessor :locales_config_path
     self.locales_config_path = "#{Rails.root}/config/locales"
 
-    cattr_accessor :primary_locale_name
-    #self.primary_locale_name = I18n.default_locale.to_s
-    self.primary_locale_name = "en"
+    def self.primary_locale_name(locale = nil)
+      @@primary_locale_name ||= (locale || Tolk.primary_locale_name)
+    end
 
     include Tolk::Sync
     include Tolk::Import
