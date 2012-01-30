@@ -1,6 +1,9 @@
 module Tolk
   class Translation < ActiveRecord::Base
-    scope :containing_text, lambda {|query| where("#{self.table_name}.text LIKE ?", "%#{query}%") }
+    scope :containing_text, lambda {|query|
+      scoped(:joins=>"LEFT JOIN #{Tolk::Phrase.table_name} ON #{self.table_name}.phrase_id = #{Tolk::Phrase.table_name}.id").
+      where("#{self.table_name}.text LIKE ? OR #{Tolk::Phrase.table_name}.key LIKE ?", "%#{query}%", "%#{query}%")
+    }
 
     serialize :text
     validates_presence_of :text, :if => proc {|r| r.primary.blank? && !r.explicit_nil }
