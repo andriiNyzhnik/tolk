@@ -30,7 +30,7 @@
 <%= form_for(Tolk::Locale.new) do |f| %>
 <div class="submit">
   <div style="float:right">
-    <%=link_to "Reload", tolk.reload_path%>
+    <%=link_to "Dump", tolk.dump_path%>
     <%=link_to "Sync", tolk.sync_path%>
   </div>
   <p>

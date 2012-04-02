@@ -17,7 +17,7 @@ module Tolk
       redirect_to root_path, :notice => "Translations synced"
     end
 
-    def reload
+    def dump
       Tolk::Locale.dump_all
       I18n.reload!
       redirect_to root_path, :notice => "Translations reloaded"
