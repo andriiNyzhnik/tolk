@@ -1,5 +1,13 @@
 <% content_for :locale do %><span class="locale empty"></span>
 <% end %>
+<div class="flash">
+  <%if alert%>
+    <span class="flash notice"><%= alert%></span>
+  <%end%>
+  <%if notice%>
+    <span class="flash notice"><%= notice%></span>
+  <%end%>
+</div>
 
 <h2>Locales <span>Primary locale is <%= Tolk::Locale.primary_locale.language_name %></span></h2>
 <% if @locales.any? %>
@@ -21,6 +29,10 @@
 <% end %>
 <%= form_for(Tolk::Locale.new) do |f| %>
 <div class="submit">
+  <div style="float:right">
+    <%=link_to "Reload", tolk.reload_path%>
+    <%=link_to "Sync", tolk.sync_path%>
+  </div>
   <p>
     <%= f.label "Add a new Locale" %>
     <select id="select_tolk_locale_name" name="tolk_locale[name]">

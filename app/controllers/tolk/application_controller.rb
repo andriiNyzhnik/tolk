@@ -11,5 +11,16 @@ module Tolk
     def ensure_no_primary_locale
       redirect_to tolk.locales_path if @locale.primary?
     end
+
+    def sync
+      Tolk::Locale.sync!
+      redirect_to root_path, :notice => "Translations synced"
+    end
+
+    def reload
+      Tolk::Locale.dump_all
+      I18n.reload!
+      redirect_to root_path, :notice => "Translations reloaded"
+    end
   end
 end
