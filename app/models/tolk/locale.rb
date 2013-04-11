@@ -1,6 +1,7 @@
 module Tolk
   class Locale < ActiveRecord::Base
-
+    attr_accessible :name
+    
     MAPPING = {
       'ar'    => 'Arabic',
       'bs'    => 'Bosnian',
