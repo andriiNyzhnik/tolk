@@ -2,7 +2,7 @@ module Tolk
   class Phrase < ActiveRecord::Base
 
     validates_uniqueness_of :key
-    attr_accessible :key
+    #attr_accessible :key
     
     cattr_accessor :per_page
     self.per_page = 30

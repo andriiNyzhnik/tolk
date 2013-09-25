@@ -4,7 +4,7 @@ module Tolk
       scoped(:joins=>"LEFT JOIN #{Tolk::Phrase.table_name} ON #{self.table_name}.phrase_id = #{Tolk::Phrase.table_name}.id").
       where("#{self.table_name}.text LIKE ? OR #{Tolk::Phrase.table_name}.key LIKE ?", "%#{query}%", "%#{query}%")
     }
-    attr_accessible :phrase_id, :locale_id, :text, :previous_text, :primary_updated, :locale, :phrase
+    #attr_accessible :phrase_id, :locale_id, :text, :previous_text, :primary_updated, :locale, :phrase
     serialize :text
     validates_presence_of :text, :if => proc {|r| r.primary.blank? && !r.explicit_nil }
     validate :check_matching_variables, :if => proc { |tr| tr.primary_translation.present? }

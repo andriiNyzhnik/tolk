@@ -19,7 +19,7 @@ module Tolk
     end
 
     def update
-      @locale.translations_attributes = params[:translations]
+      @locale.translations_attributes = translation_params
       @locale.save
       redirect_to request.referrer
     end
@@ -34,7 +34,7 @@ module Tolk
     end
 
     def create
-      Tolk::Locale.create!(params[:tolk_locale])
+      Tolk::Locale.create!(locale_params)
       redirect_to :action => :index
     end
 
@@ -42,6 +42,14 @@ module Tolk
 
     def find_locale
       @locale = Tolk::Locale.find_by_name!(params[:id])
+    end
+
+    def translation_params
+      params.require(:translations).permit(:phrase_id, :locale_id, :text, :previous_text, :primary_updated, :locale, :phrase)
+    end
+
+    def locale_params
+      params.require(:tolk_locale).permit(:name)
     end
   end
 end
