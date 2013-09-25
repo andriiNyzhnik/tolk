@@ -19,7 +19,7 @@ module Tolk
     end
 
     def update
-      @locale.translations_attributes = params[:translation]
+      @locale.translations_attributes = translation_params
       @locale.save
       redirect_to request.referrer
     end
@@ -45,7 +45,7 @@ module Tolk
     end
 
     def translation_params
-      params.require(:translations).permit(:phrase_id, :locale_id, :text, :previous_text, :primary_updated, :locale, :phrase)
+      params.require(:translation).permit(:phrase_id, :locale_id, :text, :previous_text, :primary_updated, :locale, :phrase)
     end
 
     def locale_params
