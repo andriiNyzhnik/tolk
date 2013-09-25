@@ -21,7 +21,7 @@ module Tolk
       end
 
       def flat_hash(data, prefix = '', result = {})
-        unless date.nil?
+        unless data.nil?
           data.each do |key, value|
             current_prefix = prefix.present? ? "#{prefix}.#{key}" : key
 
