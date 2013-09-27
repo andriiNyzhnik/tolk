@@ -21,19 +21,17 @@ module Tolk
       end
 
       def flat_hash(data, prefix = '', result = {})
-        unless data.nil?
-          data.each do |key, value|
-            current_prefix = prefix.present? ? "#{prefix}.#{key}" : key
+        data.each do |key, value|
+          current_prefix = prefix.present? ? "#{prefix}.#{key}" : key
 
-            if !value.is_a?(Hash) || Tolk::Locale.pluralization_data?(value)
-              result[current_prefix] = value.respond_to?(:stringify_keys) ? value.stringify_keys : value
-            else
-              flat_hash(value, current_prefix, result)
-            end
+          if !value.is_a?(Hash) || Tolk::Locale.pluralization_data?(value)
+            result[current_prefix] = value.respond_to?(:stringify_keys) ? value.stringify_keys : value
+          else
+            flat_hash(value, current_prefix, result)
           end
-
-          result.stringify_keys
         end
+
+        result.stringify_keys
       end
 
       private
