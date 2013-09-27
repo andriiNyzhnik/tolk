@@ -11,6 +11,7 @@ module Tolk
 
       def load_translations
         I18n.available_locales # force load
+        I18n.t(:simple)
         translations = flat_hash(I18n.backend.send(:translations)[primary_locale.name.to_sym])
         filter_out_i18n_keys(translations.merge(read_primary_locale_file))
       end
