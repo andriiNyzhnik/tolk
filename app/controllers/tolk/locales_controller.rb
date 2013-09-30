@@ -34,7 +34,7 @@ module Tolk
     end
 
     def create
-      Tolk::Locale.create!(params[:tolk_locale])
+      Tolk::Locale.create!(locale_params)
       redirect_to :action => :index
     end
 
