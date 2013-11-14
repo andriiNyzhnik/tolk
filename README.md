@@ -1,5 +1,5 @@
 # Tolk
-Tolk is a Rails 3.1 engine designed to facilitate the translators doing the dirty work of translating your application to other languages.
+Tolk is a Rails 4 engine designed to facilitate the translators doing the dirty work of translating your application to other languages.
 
 ## Installation & Setup
 
