@@ -6,7 +6,7 @@ Tolk is a Rails 3.1 engine designed to facilitate the translators doing the dirt
 To install add the following to your Gemfile:
 
 ````ruby
-  gem 'tolk', :git => 'git://github.com/panva/tolk.git', :branch => 'master'
+  gem 'tolk', :github => 'andriiNyzhnik/tolk', :branch => 'master'
 ````
 
 To setup just run:
