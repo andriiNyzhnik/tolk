@@ -9,7 +9,7 @@ module Tolk
     private
 
     def find_locale
-      @locale = Tolk::Locale.find_by_name!(params.require(:locale).permit(:name))
+      @locale = Tolk::Locale.find_by_name!(params[:locale])
     end
   end
 end
